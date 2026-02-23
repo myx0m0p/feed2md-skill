@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_NAME="$(basename "$0")"
 readonly SCRIPT_NAME
-readonly NPX_PACKAGE="@myx0m0p/feed2md-cli"
+readonly NPX_PACKAGE="feed2md-cli"
 
 usage() {
   cat >&2 <<EOF
