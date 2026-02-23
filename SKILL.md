@@ -1,7 +1,8 @@
 ---
 name: feed-to-md
-title: feed-to-md
+title: Feed to Markdown
 description: Convert RSS or Atom feed URLs into Markdown using feed2md. Use this when a user asks to turn a feed URL into readable Markdown, optionally limiting items or writing to a file.
+metadata: {"clawdbot":{"emoji":"📰","requires":{"bins":["feed2md","npm"]},"install":[{"id":"node","kind":"node","package":"feed2md-cli@0.1.0","bins":["feed2md"],"label":"Install feed2md-cli (npm)"}]}}
 ---
 
 # RSS/Atom to Markdown
@@ -24,10 +25,16 @@ Use this skill when the task is to convert an RSS/Atom feed URL into Markdown.
 
 ## Usage
 
-Run with `npx`:
+Install once (recommended):
 
 ```bash
-npx -y feed2md-cli "<feed_url>"
+npm install -g feed2md-cli@0.1.0
+```
+
+Run with the installed CLI:
+
+```bash
+feed2md "<feed_url>"
 ```
 
 ## Common examples
@@ -35,19 +42,19 @@ npx -y feed2md-cli "<feed_url>"
 Basic conversion:
 
 ```bash
-npx -y feed2md-cli "https://example.com/feed.xml"
+feed2md "https://example.com/feed.xml"
 ```
 
 Write to file:
 
 ```bash
-npx -y feed2md-cli "https://example.com/feed.xml" --output feed.md
+feed2md "https://example.com/feed.xml" --output feed.md
 ```
 
 Limit to 10 items:
 
 ```bash
-npx -y feed2md-cli "https://example.com/feed.xml" --limit 10
+feed2md "https://example.com/feed.xml" --limit 10
 ```
 
 ## CLI options
@@ -61,7 +68,7 @@ npx -y feed2md-cli "https://example.com/feed.xml" --limit 10
 ## Install (optional)
 
 ```bash
-npm install -g feed2md-cli
+npm install -g feed2md-cli@0.1.0
 ```
 
 Then use directly:
