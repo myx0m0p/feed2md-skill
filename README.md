@@ -15,7 +15,7 @@ This skill converts RSS/Atom feed URLs into Markdown using `feed2md`.
 ## Install CLI
 
 ```bash
-npm install -g @myx0m0p/feed2md
+npm install -g @myx0m0p/feed2md-cli
 ```
 
 ## Usage

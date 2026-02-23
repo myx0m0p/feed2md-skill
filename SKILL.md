@@ -34,7 +34,7 @@ feed2md "<feed_url>"
 2. If CLI is not installed globally, run with `npx`:
 
 ```bash
-npx -y @myx0m0p/feed2md "<feed_url>"
+npx -y @myx0m0p/feed2md-cli "<feed_url>"
 ```
 
 3. For repeatable execution, use this skill's wrapper script:
@@ -89,9 +89,9 @@ feed2md "https://example.com/feed.xml" --template-file ./template.eta
 - If `feed2md` is missing, install/use via:
 
 ```bash
-npm install -g @myx0m0p/feed2md
+npm install -g @myx0m0p/feed2md-cli
 # or
-npx -y @myx0m0p/feed2md "<feed_url>"
+npx -y @myx0m0p/feed2md-cli "<feed_url>"
 ```
 
 - If URL fetch fails, verify URL is publicly reachable and points to RSS/Atom XML.

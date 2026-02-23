@@ -18,11 +18,11 @@ fi
 
 if command -v npx >/dev/null 2>&1; then
   if [[ -n "$output_file" ]]; then
-    exec npx -y @myx0m0p/feed2md "$feed_url" --output "$output_file"
+    exec npx -y @myx0m0p/feed2md-cli "$feed_url" --output "$output_file"
   fi
-  exec npx -y @myx0m0p/feed2md "$feed_url"
+  exec npx -y @myx0m0p/feed2md-cli "$feed_url"
 fi
 
 echo "Error: neither 'feed2md' nor 'npx' is available." >&2
-echo "Install Node.js and run: npm install -g @myx0m0p/feed2md" >&2
+echo "Install Node.js and run: npm install -g @myx0m0p/feed2md-cli" >&2
 exit 1
