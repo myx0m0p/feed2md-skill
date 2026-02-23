@@ -21,27 +21,13 @@ Use this skill when the task is to convert an RSS/Atom feed URL into Markdown.
   - output path
   - max item count
   - template preset (`short` or `full`)
-  - custom template file
-  - summary options
 
-## Command workflow
+## Usage
 
-1. Prefer direct CLI if installed:
-
-```bash
-feed2md "<feed_url>"
-```
-
-2. If CLI is not installed globally, run with `npx`:
+Run with `npx`:
 
 ```bash
 npx -y feed2md-cli "<feed_url>"
-```
-
-3. For repeatable execution, use this skill's wrapper script:
-
-```bash
-./scripts/feed-to-markdown.sh "<feed_url>" [output_file]
 ```
 
 ## Common examples
@@ -49,31 +35,19 @@ npx -y feed2md-cli "<feed_url>"
 Basic conversion:
 
 ```bash
-feed2md "https://example.com/feed.xml"
+npx -y feed2md-cli "https://example.com/feed.xml"
 ```
 
 Write to file:
 
 ```bash
-feed2md "https://example.com/feed.xml" --output feed.md
+npx -y feed2md-cli "https://example.com/feed.xml" --output feed.md
 ```
 
-Limit to 10 items with full template:
+Limit to 10 items:
 
 ```bash
-feed2md "https://example.com/feed.xml" --limit 10 --template full
-```
-
-Skip summaries:
-
-```bash
-feed2md "https://example.com/feed.xml" --no-summary
-```
-
-Use custom template:
-
-```bash
-feed2md "https://example.com/feed.xml" --template-file ./template.eta
+npx -y feed2md-cli "https://example.com/feed.xml" --limit 10
 ```
 
 ## CLI options
@@ -83,16 +57,15 @@ feed2md "https://example.com/feed.xml" --template-file ./template.eta
 - `--no-summary`: exclude summaries
 - `--summary-max-length <number>`: truncate summary length
 - `--template <preset>`: `short` (default) or `full`
-- `--template-file <path>`: custom Eta template
 
-## Error handling
-
-- If `feed2md` is missing, install/use via:
+## Install (optional)
 
 ```bash
 npm install -g feed2md-cli
-# or
-npx -y feed2md-cli "<feed_url>"
 ```
 
-- If URL fetch fails, verify URL is publicly reachable and points to RSS/Atom XML.
+Then use directly:
+
+```bash
+feed2md "https://example.com/feed.xml"
+```
