@@ -1,5 +1,6 @@
 ---
 name: feed-to-md
+title: feed-to-md
 description: Convert RSS or Atom feed URLs into Markdown using feed2md. Use this when a user asks to turn a feed URL into readable Markdown, optionally limiting items or writing to a file.
 ---
 
