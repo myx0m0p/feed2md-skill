@@ -9,20 +9,20 @@ fi
 feed_url="$1"
 output_file="${2:-}"
 
-if command -v feed2md-cli >/dev/null 2>&1; then
+if command -v feed2md >/dev/null 2>&1; then
   if [[ -n "$output_file" ]]; then
-    exec feed2md-cli "$feed_url" --output "$output_file"
+    exec feed2md "$feed_url" --output "$output_file"
   fi
-  exec feed2md-cli "$feed_url"
+  exec feed2md "$feed_url"
 fi
 
 if command -v npx >/dev/null 2>&1; then
   if [[ -n "$output_file" ]]; then
-    exec npx -y @myx0m0p/feed2md-cli "$feed_url" --output "$output_file"
+    exec npx -y @myx0m0p/feed2md "$feed_url" --output "$output_file"
   fi
-  exec npx -y @myx0m0p/feed2md-cli "$feed_url"
+  exec npx -y @myx0m0p/feed2md "$feed_url"
 fi
 
-echo "Error: neither 'feed2md-cli' nor 'npx' is available." >&2
-echo "Install Node.js and run: npm install -g @myx0m0p/feed2md-cli" >&2
+echo "Error: neither 'feed2md' nor 'npx' is available." >&2
+echo "Install Node.js and run: npm install -g @myx0m0p/feed2md" >&2
 exit 1

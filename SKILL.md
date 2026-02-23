@@ -1,6 +1,6 @@
 ---
 name: feed-to-md
-description: Convert RSS or Atom feed URLs into Markdown using feed2md-cli. Use this when a user asks to turn a feed URL into readable Markdown, optionally limiting items or writing to a file.
+description: Convert RSS or Atom feed URLs into Markdown using feed2md. Use this when a user asks to turn a feed URL into readable Markdown, optionally limiting items or writing to a file.
 ---
 
 # RSS/Atom to Markdown
@@ -9,7 +9,7 @@ Use this skill when the task is to convert an RSS/Atom feed URL into Markdown.
 
 ## What this skill does
 
-- Converts a feed URL to Markdown via `feed2md-cli`
+- Converts a feed URL to Markdown via `feed2md`
 - Supports stdout output or writing to a Markdown file
 - Supports limiting article count and summary controls
 
@@ -28,13 +28,13 @@ Use this skill when the task is to convert an RSS/Atom feed URL into Markdown.
 1. Prefer direct CLI if installed:
 
 ```bash
-feed2md-cli "<feed_url>"
+feed2md "<feed_url>"
 ```
 
 2. If CLI is not installed globally, run with `npx`:
 
 ```bash
-npx -y @myx0m0p/feed2md-cli "<feed_url>"
+npx -y @myx0m0p/feed2md "<feed_url>"
 ```
 
 3. For repeatable execution, use this skill's wrapper script:
@@ -48,31 +48,31 @@ npx -y @myx0m0p/feed2md-cli "<feed_url>"
 Basic conversion:
 
 ```bash
-feed2md-cli "https://example.com/feed.xml"
+feed2md "https://example.com/feed.xml"
 ```
 
 Write to file:
 
 ```bash
-feed2md-cli "https://example.com/feed.xml" --output feed.md
+feed2md "https://example.com/feed.xml" --output feed.md
 ```
 
 Limit to 10 items with full template:
 
 ```bash
-feed2md-cli "https://example.com/feed.xml" --limit 10 --template full
+feed2md "https://example.com/feed.xml" --limit 10 --template full
 ```
 
 Skip summaries:
 
 ```bash
-feed2md-cli "https://example.com/feed.xml" --no-summary
+feed2md "https://example.com/feed.xml" --no-summary
 ```
 
 Use custom template:
 
 ```bash
-feed2md-cli "https://example.com/feed.xml" --template-file ./template.eta
+feed2md "https://example.com/feed.xml" --template-file ./template.eta
 ```
 
 ## CLI options
@@ -86,12 +86,12 @@ feed2md-cli "https://example.com/feed.xml" --template-file ./template.eta
 
 ## Error handling
 
-- If `feed2md-cli` is missing, install/use via:
+- If `feed2md` is missing, install/use via:
 
 ```bash
-npm install -g @myx0m0p/feed2md-cli
+npm install -g @myx0m0p/feed2md
 # or
-npx -y @myx0m0p/feed2md-cli "<feed_url>"
+npx -y @myx0m0p/feed2md "<feed_url>"
 ```
 
 - If URL fetch fails, verify URL is publicly reachable and points to RSS/Atom XML.

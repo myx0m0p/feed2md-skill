@@ -1,6 +1,6 @@
 # feed-to-md Skill
 
-This skill converts RSS/Atom feed URLs into Markdown using `feed2md-cli`.
+This skill converts RSS/Atom feed URLs into Markdown using `feed2md`.
 
 ## Files
 
@@ -9,13 +9,13 @@ This skill converts RSS/Atom feed URLs into Markdown using `feed2md-cli`.
 
 ## Requirements
 
-- `feed2md-cli` installed globally, or
+- `feed2md` installed globally, or
 - `npx` available from Node.js
 
 ## Install CLI
 
 ```bash
-npm install -g @myx0m0p/feed2md-cli
+npm install -g @myx0m0p/feed2md
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ npm install -g @myx0m0p/feed2md-cli
 Direct CLI:
 
 ```bash
-feed2md-cli "https://example.com/feed.xml"
+feed2md "https://example.com/feed.xml"
 ```
 
 Wrapper script:
